@@ -1,0 +1,417 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Performer" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="746,4236" sap2010:WorkflowViewState.IdRef="Performer_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="33">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Performer" sap:VirtualizedContainerService.HintSize="756,4317" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="CompanyData" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="714,79" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="All" QueueName="Equity_Share" Result="[CompanyData]" />
+    <Sequence DisplayName="Equity_Share" sap:VirtualizedContainerService.HintSize="714,4106" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Int32" Default="1" Name="intCounter" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="672,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Performer Execution Started&quot;]" />
+      <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open &quot;https://Finance.yahoo.com/&quot;" sap:VirtualizedContainerService.HintSize="672,3737" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://finance.yahoo.com/">
+        <ui:OpenBrowser.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="638,3636" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="[intCounter]" DisplayName="For Each item in Queue" sap:VirtualizedContainerService.HintSize="596,3544" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[CompanyData]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="ui:QueueItem">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ui:QueueItem" Name="item" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="560,3421" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,3329" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="Start_Date" />
+                          <Variable x:TypeArguments="x:String" Name="End_Date" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Find index" sap:VirtualizedContainerService.HintSize="476,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[intCounter]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[intCounter+1]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Company name in Search bar" sap:VirtualizedContainerService.HintSize="476,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[item.SpecificContent(&quot;Company&quot;).ToString]">
+                          <ui:TypeInto.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a6a64c56-41bf-4a56-9002-fde64d4c2ace" InformativeScreenshot="1d872a8032f4fbb85425785d973a248f" Selector="&lt;html app='chrome.exe' title='Yahoo Finance - Stock Market Live, Quotes, Business &amp;amp; Finance News' /&gt;&lt;webctrl parentid='Col2-1-SymbolLookupV2-Proxy' tag='INPUT' type='text' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:TypeInto.Target>
+                        </ui:TypeInto>
+                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey enter to search" sap:VirtualizedContainerService.HintSize="476,152" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="enter" KeyModifiers="None" SpecialKey="True">
+                          <ui:SendHotkey.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c2d5c6a4-7ad7-4ce7-b967-c6e9ff92f9e5" InformativeScreenshot="7149e90ae37d257d155052625772dc86" Selector="&lt;html app='chrome.exe' title='Yahoo Finance - Stock Market Live, Quotes, Business &amp;amp; Finance News' /&gt;&lt;webctrl parentid='Col2-1-SymbolLookupV2-Proxy' tag='INPUT' type='text' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:SendHotkey.Target>
+                        </ui:SendHotkey>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Historical Data" sap:VirtualizedContainerService.HintSize="476,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ce0b046a-46fb-4ce0-a86e-0e771a0eecd4" InformativeScreenshot="e7fb25eeb9e1cfef90f9f588dd13faf4" Selector="&lt;html app='chrome.exe' title='Tesla, Inc. (TSLA) Stock Price, News, Quote &amp;amp; History - Yahoo Finance' /&gt;&lt;webctrl aaname='Historical Data' parentid='quote-nav' tag='SPAN' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey pgdn to scroll page" sap:VirtualizedContainerService.HintSize="476,152" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="pgdn" KeyModifiers="None" SpecialKey="True">
+                          <ui:SendHotkey.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e0d651e9-4fff-4ad9-9d92-35b604478b73" InformativeScreenshot="b2cab3fa32ab4db259ab0fd28a347f0f" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Tesla, Inc. (TSLA) Stock Price, News, Quote &amp;amp; History - Yahoo Fi*' /&gt;&lt;ctrl name='Tesla, Inc. (TSLA) Stock Price, News, Quote &amp;amp; History - Yahoo Fi*' role='document' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:SendHotkey.Target>
+                        </ui:SendHotkey>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Time Period" sap:VirtualizedContainerService.HintSize="476,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1f0afb5-4718-4441-b470-ef428fed4004" InformativeScreenshot="e9b99a313c79872b3169b53555fbc1b4" Selector="&lt;html app='chrome.exe' title='Tesla, Inc. (TSLA) Stock Historical Prices &amp;amp; Data - Yahoo Finance' /&gt;&lt;webctrl aaname='Nov 18, 2021 - Nov 18, 2022' parentid='Col1-1-HistoricalDataTable-Proxy' tag='SPAN' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 3 months" sap:VirtualizedContainerService.HintSize="476,106" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="17992c9e-dd74-45e1-85bd-318761b34245" InformativeScreenshot="704e7e9f5369af522abe311b7b794db0" Selector="&lt;html app='chrome.exe' title='Tesla, Inc. (TSLA) Stock Historical Prices &amp;amp; Data - Yahoo Finance' /&gt;&lt;webctrl aaname='3M' parentid='dropdown-menu' tag='BUTTON' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Frequency" sap:VirtualizedContainerService.HintSize="476,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d48a50f-7c65-4110-8321-8d18f84b93bf" InformativeScreenshot="f0178c0d8884d04f4f2b8ee9575a88db" Selector="&lt;html app='chrome.exe' title='Tesla, Inc. (TSLA) Stock Historical Prices &amp;amp; Data - Yahoo Finance' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div' idx='2' parentid='Col1-1-HistoricalDataTable-Proxy' tag='DIV' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Monthly" sap:VirtualizedContainerService.HintSize="476,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3a85a5c1-ace0-4d7a-86e5-e747dd065f83" InformativeScreenshot="5966a425ca3962595c4bee1ac1ba2265" Selector="&lt;html app='chrome.exe' title='Tesla, Inc. (TSLA) Stock Historical Prices &amp;amp; Data - Yahoo Finance' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;div' idx='3' parentid='Col1-1-HistoricalDataTable-Proxy' tag='DIV' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Apply" sap:VirtualizedContainerService.HintSize="476,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f4d30c58-e6a5-4f0d-8530-9bbe2baf492c" InformativeScreenshot="680bc70e3edd887153d3fda5456b5b1c" Selector="&lt;html app='chrome.exe' title='Tesla, Inc. (TSLA) Stock Historical Prices &amp;amp; Data - Yahoo Finance' /&gt;&lt;webctrl parentid='Col1-1-HistoricalDataTable-Proxy' tag='BUTTON' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Start Date" sap:VirtualizedContainerService.HintSize="476,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                          <ui:GetValue.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f0022f2c-9180-475c-b5f2-4fcb35eceb2b" InformativeScreenshot="2a60eed06b2d18c0cca0b0fd4bf6a23c" Selector="&lt;html app='chrome.exe' title='Tesla, Inc. (TSLA) Stock Historical Prices &amp;amp; Data - Yahoo Finance' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='SPAN' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:GetValue.Target>
+                          <ui:GetValue.Value>
+                            <OutArgument x:TypeArguments="x:String">[Start_Date]</OutArgument>
+                          </ui:GetValue.Value>
+                        </ui:GetValue>
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get End Date" sap:VirtualizedContainerService.HintSize="476,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                          <ui:GetValue.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="268770c9-3d7e-4ac5-b256-cb4bff02e4f7" InformativeScreenshot="ee612a993e38ad5ec2b780e4d7d69963" Selector="&lt;html app='chrome.exe' title='Tesla, Inc. (TSLA) Stock Historical Prices &amp;amp; Data - Yahoo Finance' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:GetValue.Target>
+                          <ui:GetValue.Value>
+                            <OutArgument x:TypeArguments="x:String">[End_Date]</OutArgument>
+                          </ui:GetValue.Value>
+                        </ui:GetValue>
+                        <ui:WriteCell Cell="B1" DisplayName="Write StartDate in &quot;EquityShare_company.xlsx&quot;" sap:VirtualizedContainerService.HintSize="476,115" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="EquityShare_company" Text="[Start_Date]" WorkbookPath="EquityShare_company.xlsx" />
+                        <ui:WriteCell Cell="B2" DisplayName="Write EndDate in &quot;EquityShare_company.xlsx&quot;" sap:VirtualizedContainerService.HintSize="476,115" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="EquityShare_company" Text="[End_Date]" WorkbookPath="EquityShare_company.xlsx" />
+                        <Sequence DisplayName="Records Data" sap:VirtualizedContainerService.HintSize="476,1101" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser &quot;StockValue&quot;" sap:VirtualizedContainerService.HintSize="434,1009" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="2e44bbf9f7e020aaadb36cd40856cbd7" Selector="&lt;html app='chrome.exe' title='Tesla, Inc. (TSLA) Stock Historical Prices &amp;amp; Data - Yahoo Finance' /&gt;">
+                            <ui:BrowserScope.Body>
+                              <ActivityAction x:TypeArguments="x:Object">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,863" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                  <Sequence.Variables>
+                                    <Variable x:TypeArguments="x:Int32" Name="High" />
+                                    <Variable x:TypeArguments="x:Int32" Name="Low" />
+                                  </Sequence.Variables>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Records Data 'TABLE'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Date' attr='text' /&gt;&lt;column name='Open' attr='text' /&gt;&lt;column name='High' attr='text' /&gt;&lt;column name='Low' attr='text' /&gt;&lt;column name='Close*' attr='text' /&gt;&lt;column name='Adj Close**' attr='text' /&gt;&lt;column name='Volume' attr='text' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100" SimulateClick="True">
+                                    <ui:ExtractData.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="eaa9f744-e778-4bb2-96b5-7086b3ca2241" InformativeScreenshot="bc89fb49edfde0530976671a12cf737f" Selector="&lt;webctrl tag='TABLE' /&gt;" WaitForReady="COMPLETE">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                      </ui:Target>
+                                    </ui:ExtractData.Target>
+                                  </ui:ExtractData>
+                                  <Assign DisplayName="Find Record High" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Int32">[High]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Int32">[ExtractDataTable.AsEnumerable().Max(Function(row)cint(row("High")))]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign DisplayName="Find Record Low" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Int32">[Low]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Int32">[ExtractDataTable.AsEnumerable().Min(Function(row)cint(row("Low")))]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:WriteCell Cell="B3" DisplayName="Write Record High in &quot;EquityShare_company.xlsx&quot;" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteCell_5" SheetName="[&quot;Sheet&quot;+intCounter.ToString]" Text="[High.ToString]" WorkbookPath="EquityShare_company.xlsx" />
+                                  <ui:WriteCell Cell="B4" DisplayName="Write Record Low in &quot;EquityShare_company.xlsx&quot;" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteCell_6" SheetName="[&quot;Sheet&quot;+intCounter.ToString]" Text="[Low.ToString]" WorkbookPath="EquityShare_company.xlsx" />
+                                  <ui:WriteCell Cell="C2" DisplayName="Write Company name in &quot;EquityShare_company.xlsx&quot;" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteCell_7" SheetName="[&quot;Sheet&quot;+intCounter.ToString]" Text="[item.SpecificContent(&quot;Company&quot;).ToString]" WorkbookPath="EquityShare_company.xlsx" />
+                                </Sequence>
+                              </ActivityAction>
+                            </ui:BrowserScope.Body>
+                          </ui:BrowserScope>
+                        </Sequence>
+                      </Sequence>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+              </ui:ForEach>
+            </Sequence>
+          </ActivityAction>
+        </ui:OpenBrowser.Body>
+      </ui:OpenBrowser>
+      <ui:CloseApplication DisplayName="Close Application 'chrome.exe Yahoo'" sap:VirtualizedContainerService.HintSize="672,106" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+        <ui:CloseApplication.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="51e24801-a475-4033-a2e5-e2621d9cf320" InformativeScreenshot="58bd8ca1e3edaf7f82edd9c76566dd90" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Yahoo Finance - Stock Market Live, Quotes, Business &amp;amp; Finance Ne*' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:CloseApplication.Target>
+      </ui:CloseApplication>
+    </Sequence>
+  </Sequence>
+</Activity>
